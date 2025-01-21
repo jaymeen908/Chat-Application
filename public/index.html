@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A real-time chat application connecting people worldwide.">
+    <title>Real-Time Chat Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <h1>Real-Time Chat</h1>
+            <p>Connect with people across the globe!</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="chat-room-container" role="main">
+            <!-- Room List Section -->
+            <nav class="room-list" aria-label="Chat Rooms">
+                <h3>Available Rooms</h3>
+                <ul id="rooms-list" role="list">
+                    <!-- Dynamic list of rooms will appear here -->
+                </ul>
+                <button id="create-room" aria-label="Create a new chat room">Create Room</button>
+            </nav>
+
+            <!-- Chat Box Section -->
+            <section class="chat-box" aria-labelledby="message-display">
+                <div id="message-display" class="message-display" role="log" aria-live="polite">
+                    <!-- Dynamic messages will appear here -->
+                </div>
+                <div class="message-input-container">
+                    <label for="message-input" class="visually-hidden">Type a message</label>
+                    <input type="text" id="message-input" placeholder="Type a message..." aria-label="Type your message here">
+                    <button id="send-message" aria-label="Send message">Send</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section (User Authentication) -->
+        <footer class="footer" role="contentinfo">
+            <div class="username-container">
+                <label for="username" class="visually-hidden">Enter your username</label>
+                <input type="text" id="username" placeholder="Enter your username" aria-label="Enter your username">
+                <button id="join-room" aria-label="Join selected room">Join Room</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.socket.io/4.5.1/socket.io.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
